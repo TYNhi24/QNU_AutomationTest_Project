@@ -1,0 +1,5 @@
+robotframework
+robotframework-seleniumlibrary
+webdriver-manager
+robotframework-datadriver[XLSX]
+robotframework-pabot
