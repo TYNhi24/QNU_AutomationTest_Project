@@ -8,7 +8,7 @@ Test Teardown   Dong Trinh Duyet QNU
 *** Test Cases ***
 TC_008: Search With Exact Keyword
     [Documentation]    Tìm kiếm từ khóa chính xác
-    Search News And Verify Result    Hướng dẫn đăng ký học phần    PASS
+    Search News And Verify Result      Hướng dẫn đăng ký học phần    PASS
     # Kiểm tra xem tiêu đề vùng tin tức có chứa từ khóa vừa tìm không
     Page Should Contain  Hướng dẫn đăng ký học phần
 

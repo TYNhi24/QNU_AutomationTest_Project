@@ -7,15 +7,15 @@ Test Setup      Mo Trinh Duyet QNU
 Test Teardown   Dong Trinh Duyet QNU
 
 *** Test Cases ***
-# TC_01: Verify Navigation To Admission Page
-#     [Documentation]    Kiểm tra việc chuyển hướng thành công đến trang Tra cứu tuyển sinh
-#     [Tags]             Priority_High    UI_Navigation
-#     Navigate To Admission Page  
+TC_01: Verify Navigation To Admission Page
+    [Documentation]    Kiểm tra việc chuyển hướng thành công đến trang Tra cứu tuyển sinh
+    [Tags]             Priority_High    UI_Navigation
+    Navigate To Admission Page  
 
-# TC_02: Verify Navigation To Faculty Schedule Page
-#     [Documentation]    Kiểm tra việc chuyển hướng thành công đến trang Thời khóa biểu giảng viên
-#     [Tags]             Priority_Medium    UI_Navigation
-#     Navigate To Schedule Page   
+TC_02: Verify Navigation To Faculty Schedule Page
+    [Documentation]    Kiểm tra việc chuyển hướng thành công đến trang Thời khóa biểu giảng viên
+    [Tags]             Priority_Medium    UI_Navigation
+    Navigate To Schedule Page   
 
 TC_03: Verify Navigation To Login Page
     [Documentation]    Kiểm tra việc chuyển hướng thành công đến trang Đăng nhập
