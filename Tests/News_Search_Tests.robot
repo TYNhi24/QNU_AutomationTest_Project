@@ -25,3 +25,20 @@ TC_011: Search With No-Tone Vietnamese
     [Documentation]    Tìm kiếm tiếng Việt không dấu
     Search News And Verify Result    hoc phan    FAIL
     Wait Until Element Is Visible    ${MSG_NO_DATA}    10s
+
+TC_012: Search With Capital Letters
+    [Documentation]    Tìm kiếm với ký tự viết hoa
+    Search News And Verify Result    HỌC PHẦN    PASS
+    Page Should Contain         học phần
+
+TC_013: Search With Leading And Trailing Spaces
+    [Documentation]    Tìm kiếm với khoảng trắng ở đầu và cuối
+    ${keyword}=    Set Variable      ${SPACE}${SPACE}học phần${SPACE}${SPACE}
+    Search News And Verify Result    ${keyword}    PASS
+    Page Should Contain         học phần
+  
+TC_014: Search With Special Icon
+    [Documentation]    Tìm kiếm với icon đặc biệt
+    Search News And Verify Result    ★※✓    FAIL
+    Wait Until Element Is Visible    ${MSG_NO_DATA}    10s
+

@@ -15,10 +15,12 @@ TC-013: Verify Faculty Schedule Search With Non-Existent Info
     [Documentation]    Kiểm tra tra cứu bằng mã giảng viên không tồn tại
     Search Faculty Schedule    2025-2026    Học kỳ 1    Khoa Công nghệ thông tin    999999
     Verify No Schedule Found
+
 TC-014: Verify Faculty Schedule Search By Accurate Lecturer Name
     [Documentation]    Kiểm tra tra cứu bằng tên giảng viên đầy đủ
     Search Faculty Schedule    2025-2026    Học kỳ 1    Khoa Công nghệ thông tin    Huỳnh Ngọc Khoa
     Verify Schedule Found For Lecturer    Huỳnh Ngọc Khoa
+    
 TC-015: Verify Faculty Schedule Search By Lecturer Name Without Tones
     [Documentation]    Kiểm tra tra cứu bằng tên giảng viên không dấu
     Search Faculty Schedule    2025-2026    Học kỳ 1    Khoa Công nghệ thông tin    Huynh Ngoc Khoa

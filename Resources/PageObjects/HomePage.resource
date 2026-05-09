@@ -15,11 +15,9 @@ ${LBL_NEWS_TITLE}       xpath://div[contains(@class, 'grid-md-9')]//h6//span
 ${TXT_SEARCH_NEWS}      id:searchTinTuc
 ${BTN_SEARCH_NEWS}      xpath://input[@id='searchTinTuc']/following-sibling::button
 # ...    xpath://button[contains(@class, 'MuiButton-containedInfo')]
-
 # Định vị tiêu đề bản tin ĐẦU TIÊN trong danh sách kết quả
 # Ta dùng mỏ neo grid-md-9 và tìm thẻ <p> chứa nội dung bản tin
 ${LBL_FIRST_NEWS_ITEM}  xpath:(//div[contains(@class, 'grid-md-9')]//a//p)[1]
-
 # Thông báo khi không tìm thấy kết quả
 ${MSG_NO_DATA}          xpath://*[contains(text(), 'Không có tin tức nào')]
 
@@ -35,24 +33,6 @@ Select News Category And Verify Title
     Wait Until Element Contains    ${LBL_NEWS_TITLE}    ${expected_title}    timeout=15s
     Element Text Should Be         ${LBL_NEWS_TITLE}    ${expected_title}
 
-# Keyword mới "đặc trị" cho mục MẶC ĐỊNH (TC_005)
-# Select Default Category By Toggling State
-#     [Arguments]    ${category_locator}    ${expected_title}
-    
-#     # 1. Click sang mục khác làm trung gian
-#     Wait Until Element Is Enabled    ${BTN_FEATURED_NEWS}    15s
-#     Click Element    ${BTN_FEATURED_NEWS}
-#     Wait Until Element Contains     ${LBL_NEWS_TITLE}    Thông báo nổi bật    timeout=10s
-    
-#     # 2. QUAN TRỌNG: Đợi mục chính SẴN SÀNG rồi mới CLICK
-#     Wait Until Element Is Enabled    ${category_locator}    15s
-#     Click Element    ${category_locator}
-    
-#     # 3. Xác nhận kết quả cuối cùng
-#     Wait Until Element Contains    xpath://h6[contains(@class, 'MuiTypography-subtitle1')]//span[text()='Thông báo chung']   ${expected_title}    timeout=15s
-#     Element Text Should Be        xpath://h6[contains(@class, 'MuiTypography-subtitle1')]//span[text()='Thông báo chung']   ${expected_title}
-
-
 Select Default Category By Toggling State
     [Arguments]    ${category_locator}    ${expected_title}
     
@@ -62,7 +42,7 @@ Select Default Category By Toggling State
     Sleep    2s
     Wait Until Page Contains    Thông báo nổi bật    timeout=15s
     
-    # 2. QUAN TRỌNG: Đợi mục chính SẴN SÀNG rồi mới CLICK
+    # 2. Đợi mục chính SẴN SÀNG rồi mới CLICK
     Wait Until Element Is Enabled    ${category_locator}    15s
     Click Element    ${category_locator}
     Sleep    3s    # Đợi React render lại tiêu đề
@@ -80,12 +60,12 @@ Search News And Verify Result
     Wait Until Element Is Visible    ${TXT_SEARCH_NEWS}    15s
     Clear Element Text               ${TXT_SEARCH_NEWS}
     Input Text                       ${TXT_SEARCH_NEWS}    ${keyword}
-    # Press Keys    ${TXT_SEARCH_NEWS}    ENTER
+    Press Keys    ${TXT_SEARCH_NEWS}    ENTER
     
-    # 2. đợi React render lại danh sách
-    Wait Until Element Is Enabled    ${BTN_SEARCH_NEWS}    10s
-    Click Element                    ${BTN_SEARCH_NEWS}
-    Sleep    1.5s    # Đợi một chút để danh sách tin tức cũ biến mất và tin mới hiện ra
+    # # 2. đợi React render lại danh sách
+    # Wait Until Element Is Enabled    ${BTN_SEARCH_NEWS}    10s
+    # Click Element                    ${BTN_SEARCH_NEWS}
+    # Sleep    1.5s    # Đợi một chút để danh sách tin tức cũ biến mất và tin mới hiện ra
     
     # 3. Kiểm tra kết quả tùy theo kịch bản (Thành công hay Không có dữ liệu)
     IF    '${expected_status}' == 'PASS'

@@ -10,7 +10,6 @@ TC_004: Verify Featured News Category
     [Tags]    News_UI
     Select News Category And Verify Title    ${BTN_FEATURED_NEWS}    Thông báo nổi bật
 
-# case này lỗi lúc quay lại không thấy đc phần tử 
 TC_005: Verify General News Category
     [Tags]    News_UI
     Select Default Category By Toggling State    ${BTN_GENERAL_NEWS}     Thông báo chung

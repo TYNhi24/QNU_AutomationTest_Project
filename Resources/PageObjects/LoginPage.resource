@@ -11,7 +11,6 @@ ${LBL_SUCCESS_STUDENT}      xpath://a[@href='/student']
 ${MSG_MISSING_USER}         xpath://p[text()='Tên đăng nhập là bắt buộc']
 ${MSG_MISSING_PASS}         xpath://p[text()='Mật khẩu là bắt buộc']
 ${MSG_INVALID_AUTH}         xpath://p[contains(text(),'Tên đăng nhập hoặc mật khẩu không chính xác')]
-
 *** Keywords ***
 Login To System
     [Arguments]    ${user}    ${pass}
@@ -30,3 +29,8 @@ Verify Login Error Message
     [Documentation]    Xác nhận thông báo lỗi hiển thị đúng
     Wait Until Element Is Visible    ${expected_msg_locator}    10s
     Element Should Be Visible        ${expected_msg_locator}
+
+Verify Both Fields Required
+    [Documentation]    Xác nhận thông báo lỗi khi cả tên đăng nhập và mật khẩu đều thiếu
+    Wait Until Element Is Visible    ${MSG_MISSING_USER}    10s
+    Wait Until Element Is Visible    ${MSG_MISSING_PASS}    10s
